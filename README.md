@@ -1,4 +1,4 @@
-## react project starter with antd-mobile 2.x, roadhog, redux, immutable
+## xhj_mobile with react, antd-mobile 2.x, roadhog, redux, immutable
 
 Include below common usage:
 
@@ -13,5 +13,5 @@ yarn install
 yarn run dev
 ```
 
-http://localhost:8001/
+http://localhost:8002/
 

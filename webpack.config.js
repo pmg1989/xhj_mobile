@@ -32,7 +32,7 @@ module.exports = (webpackConfig, env) => {
       }),
       new SWPrecacheWebpackPlugin({
         minify: true,
-        cacheId: 'antd-mobile-roadhog',
+        cacheId: 'xhj-mobile',
         filename: 'service-worker.js',
         filepath: 'dist/service-worker.js',
         stripPrefix: 'dist/',
@@ -63,7 +63,6 @@ module.exports = (webpackConfig, env) => {
         minify: false,
         // hash: true,
         zhugeAppKey,
-        serviceWorker: '/service-worker.js',
       }),
     ])
   }

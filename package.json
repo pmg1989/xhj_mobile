@@ -1,12 +1,12 @@
 {
   "private": true,
-  "name": "antd-mobile-roadhog",
+  "name": "xhj_mobile",
   "version": "1.0.1",
   "theme": "./theme.config.js",
   "scripts": {
-    "dev": "cross-env API_ENV=development BROWSER=none PORT=8002 roadhog server",
-    "dev:staging": "cross-env API_ENV=staging BROWSER=none PORT=8002 roadhog server",
-    "dev:release": "cross-env API_ENV=production BROWSER=none PORT=8002 roadhog server",
+    "dev": "cross-env API_ENV=development PORT=8002 roadhog server",
+    "dev:staging": "cross-env API_ENV=staging PORT=8002 roadhog server",
+    "dev:release": "cross-env API_ENV=production PORT=8002 roadhog server",
     "build:dev": "cross-env node deploy && API_ENV=development roadhog build",
     "build:staging": "cross-env node deploy && API_ENV=staging roadhog build",
     "build:release": "cross-env node deploy && API_ENV=production roadhog build",

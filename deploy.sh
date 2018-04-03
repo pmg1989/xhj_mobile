@@ -1,7 +1,7 @@
-docker stop nginx-antd-mobile-roadhog
-docker rm nginx-antd-mobile-roadhog
-docker build -t nginx/antd-mobile-roadhog .
-docker run --name nginx-antd-mobile-roadhog \
+docker stop nginx-xhj-mobile
+docker rm nginx-xhj-mobile
+docker build -t nginx/xhj-mobile .
+docker run --name nginx-xhj-mobile \
 -d -p 8888:80 \
 -v "$PWD"/dist:/usr/share/nginx/html \
-nginx/antd-mobile-roadhog
+nginx/xhj-mobile
