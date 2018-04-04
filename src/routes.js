@@ -4,39 +4,64 @@ const Routes = [
     component: require('./containers/App'),
     getIndexRoute (location, cb) {
       require.ensure([], (require) => {
-        cb(null, { component: require('./containers/Todo') })
+        cb(null, { component: require('./containers/Home') })
       }, 'home')
     },
     childRoutes: [
       {
-        path: 'demo1',
-        getComponent (location, cb) {
-          require.ensure([], (require) => {
-            cb(null, require('./containers/Demo'))
-          }, 'demo1')
-        },
+        path: 'product',
+        childRoutes: [
+          {
+            path: 'category',
+            getComponent (location, cb) {
+              require.ensure([], (require) => {
+                cb(null, require('./containers/Product/Category'))
+              }, 'product-category')
+            },
+          },
+          {
+            path: 'index',
+            getComponent (location, cb) {
+              require.ensure([], (require) => {
+                cb(null, require('./containers/Product/Index'))
+              }, 'product-index')
+            },
+          },
+        ],
       },
       {
-        path: 'demo2',
-        getComponent (location, cb) {
-          require.ensure([], (require) => {
-            cb(null, require('./containers/Demo2'))
-          }, 'demo2')
-        },
-      },
-      {
-        path: 'demo3',
-        getComponent (location, cb) {
-          require.ensure([], (require) => {
-            cb(null, require('./containers/Demo3'))
-          }, 'demo3')
-        },
+        path: 'account',
+        childRoutes: [
+          {
+            path: 'center',
+            getComponent (location, cb) {
+              require.ensure([], (require) => {
+                cb(null, require('./containers/account/Center'))
+              }, 'account-center')
+            },
+          },
+          {
+            path: 'orderlist',
+            getComponent (location, cb) {
+              require.ensure([], (require) => {
+                cb(null, require('./containers/account/OrderList'))
+              }, 'account-order-list')
+            },
+          },
+        ],
       },
     ],
   },
   {
+    path: 'login',
+    getComponent (nextState, cb) {
+      require.ensure([], (require) => {
+        cb(null, require('./containers/Login'))
+      }, 'login')
+    },
+  },
+  {
     path: '*',
-    name: 'error',
     getComponent (nextState, cb) {
       require.ensure([], (require) => {
         cb(null, require('./containers/Error'))

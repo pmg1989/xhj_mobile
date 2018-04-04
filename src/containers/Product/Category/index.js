@@ -4,22 +4,20 @@ import { bindActionCreators } from 'redux'
 import { connect, Header } from 'components'
 import { newsActions } from 'actions/news'
 
-class Demo extends Component {
+class Category extends Component {
   static propTypes = {
     onNewsActions: PropTypes.object.isRequired,
   }
 
   componentDidMount () {
-    const { onNewsActions } = this.props
-    onNewsActions.fetchNewsList()
   }
 
   render () {
     return (
       <div className="content-box">
-        <Header>demo3</Header>
+        <Header>享换机信用租机</Header>
         <div className="content">
-          haha
+          product category
       </div>
       </div>
     )
@@ -30,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
   onNewsActions: bindActionCreators(newsActions, dispatch),
 })
 
-export default connect(null, mapDispatchToProps)(module)(Demo)
+export default connect(null, mapDispatchToProps)(module)(Category)
