@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect, Header } from 'components'
 import { newsActions } from 'actions/news'
+import GridHeader from './GridHeader'
+import ListItem from './ListItem'
 
 class Help extends Component {
   static propTypes = {
@@ -17,8 +19,9 @@ class Help extends Component {
       <div className="content-box">
         <Header>享换机</Header>
         <div className="content">
-          help index
-      </div>
+          <GridHeader />
+          <ListItem />
+        </div>
       </div>
     )
   }
