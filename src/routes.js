@@ -42,6 +42,89 @@ const account = {
   ],
 }
 
+const help = {
+  path: 'help',
+  getIndexRoute (location, cb) {
+    require.ensure([], (require) => {
+      cb(null, { component: require('./containers/Help/Index') })
+    }, 'help-index')
+  },
+  childRoutes: [
+    {
+      path: 'index',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/Index'))
+        }, 'help-index')
+      },
+    },
+    {
+      path: 'howtouse',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/HowtoUse'))
+        }, 'help-how-to-use')
+      },
+    },
+    {
+      path: 'howtoorder',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/HowtoOrder'))
+        }, 'help-how-to-order')
+      },
+    },
+    {
+      path: 'howtomaintain',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/HowtoMaintain'))
+        }, 'help-how-to-maintain')
+      },
+    },
+    {
+      path: 'complaintadvice',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/ComplaintAdvice'))
+        }, 'help-complaint-advice')
+      },
+    },
+    {
+      path: 'coststatement',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/CostStatement'))
+        }, 'help-cost-statement')
+      },
+    },
+    {
+      path: 'beforerent',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/BeforeRent'))
+        }, 'help-before-rent')
+      },
+    },
+    {
+      path: 'customerservice',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/CustomerService'))
+        }, 'help-customer-service')
+      },
+    },
+    {
+      path: 'afterrent',
+      getComponent (location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Help/AfterRent'))
+        }, 'help-after-rent')
+      },
+    },
+  ],
+}
+
 const Routes = [
   {
     path: '/',
@@ -54,6 +137,7 @@ const Routes = [
     childRoutes: [
       product,
       account,
+      help,
     ],
   },
   {
