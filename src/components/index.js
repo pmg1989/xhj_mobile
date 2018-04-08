@@ -4,6 +4,7 @@ import Icon from './Icon'
 import Empty from './Empty'
 import Link from './Link'
 import ViewList from './ViewList'
+import TabBar from './TabBar'
 
 export {
   connect,
@@ -12,4 +13,5 @@ export {
   Empty,
   Link,
   ViewList,
+  TabBar,
 }
