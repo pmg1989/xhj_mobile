@@ -15,7 +15,7 @@ class HowtoMaintain extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 维修流程</Header>
+        <Header>维修流程</Header>
         <div className="content">
           help HowtoMaintain
       </div>

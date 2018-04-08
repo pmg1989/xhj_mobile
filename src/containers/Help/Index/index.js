@@ -17,7 +17,7 @@ class Help extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机</Header>
+        <Header>帮助中心</Header>
         <div className="content">
           <GridHeader />
           <ListItem />

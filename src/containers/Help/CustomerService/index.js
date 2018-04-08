@@ -15,7 +15,7 @@ class CustomerService extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 售后维修</Header>
+        <Header>售后维修</Header>
         <div className="content">
           help CustomerService
       </div>

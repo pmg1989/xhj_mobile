@@ -15,7 +15,7 @@ class HowtoOrder extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 下单流程</Header>
+        <Header>下单流程</Header>
         <div className="content">
           help HowtoOrder
       </div>

@@ -15,7 +15,7 @@ class Home extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机</Header>
+        <Header>首页</Header>
         <div className="content">
           home index
       </div>
