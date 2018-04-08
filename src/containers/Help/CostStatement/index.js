@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect, Container, Header, TabBar } from 'components'
-import ListAccordion from './ListAccordion'
+import { scrollToAnchor } from 'utils/tools'
+import AccordionOne from './AccordionOne'
+import AccordionTwo from './AccordionTwo'
+import AccordionThree from './AccordionThree'
+import AccordionFour from './AccordionFour'
 
 class CostStatement extends Component {
   static propTypes = {
@@ -9,6 +13,10 @@ class CostStatement extends Component {
   }
 
   componentDidMount () {
+    setTimeout(() => {
+      const question = this.props.query.question
+      question && scrollToAnchor(this.props.query.question)
+    }, 0)
   }
 
   render () {
@@ -20,7 +28,10 @@ class CostStatement extends Component {
 
     return (
       <Container {...containerProps}>
-        <ListAccordion activeKey={question} />
+        <AccordionOne activeKey={question} />
+        <AccordionTwo activeKey={question} />
+        <AccordionThree activeKey={question} />
+        <AccordionFour activeKey={question} />
       </Container>
     )
   }
