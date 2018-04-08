@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { connect, Container, Header, TabBar } from 'components'
 import GridHeader from './GridHeader'
 import ListItem from './ListItem'
 
 class Help extends Component {
   static propTypes = {
-    onNewsActions: PropTypes.object.isRequired,
   }
 
   componentDidMount () {

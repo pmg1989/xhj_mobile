@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 import { List, Accordion, Flex } from 'antd-mobile'
 import styles from './ListAccordion.less'
 
 const Panel = Accordion.Panel
 
-const ListAccordion = () => {
+const AccordionOne = ({ activeKey }) => {
   return (
     <List renderHeader={'租机'}>
-      <Accordion accordion defaultActiveKey="3">
+      <Accordion accordion defaultActiveKey={activeKey}>
         <Panel key="1" header="1.租机时需要支付哪些费用？">
           <Flex wrap="wrap" className={styles.item_box}>
             租机费用包括：<br />
@@ -45,6 +46,104 @@ const ListAccordion = () => {
       </Accordion>
     </List>
   )
+}
+AccordionOne.propTypes = {
+  activeKey: PropTypes.string,
+}
+
+const AccordionTwo = ({ activeKey }) => {
+  return (
+    <List renderHeader={'还款'}>
+      <Accordion accordion defaultActiveKey={activeKey}>
+        <Panel key="6" header="6.扣款周期是多久？">
+          <Flex wrap="wrap" className={styles.item_box}>
+            支付方式不同，扣款周期也不同。<br />
+            • 如果您选择的是蚂蚁花呗或支付宝代扣支付，每期周期为1个月，总期数视租赁周期而定。<br />
+            • 如果您选择的是信用卡支付，每期周期为25天，总期数视租赁周期而定。
+          </Flex>
+        </Panel>
+        <Panel key="7" header="7.每月什么时候还款？">
+          <Flex wrap="wrap" className={styles.item_box}>
+            不同支付方式，还款时间不同。<br />
+            • 蚂蚁花呗支付：具体还款日以花呗还款日为准。<br />
+            • 支付宝代扣支付：确认签收后一个自然月首次扣款（含意外保障服务费），后续每月扣款日即为您签收日。如遇当月不存在的日期，顺延至次月1日扣款。<br />
+            • 信用卡支付：首期下单成功即扣一期租金（含保险费），剩余周期的还款日以信用卡还款日为准。
+           </Flex>
+        </Panel>
+        <Panel key="8" header="8.信用卡还款为什么有时一个月会有2笔还款账单？">
+          <Flex wrap="wrap" className={styles.item_box}>
+            信用卡1个月为一个还款周期，享换机用信用卡冻结额度，25天为一个扣款周期，所以有时会产生一个月有2笔还款账单的现象。
+          </Flex>
+        </Panel>
+      </Accordion>
+    </List>
+  )
+}
+AccordionTwo.propTypes = {
+  activeKey: PropTypes.string,
+}
+
+const AccordionThree = ({ activeKey }) => {
+  return (
+    <List renderHeader={'续租'}>
+      <Accordion accordion defaultActiveKey={activeKey}>
+        <Panel key="9" header="9.续租租金和租机时的租金是一样的吗？">
+          <Flex wrap="wrap" className={styles.item_box}>      
+            用户在租赁到期可以选择继续租用手机，有不同时长可以选择，并且可以多次续租，续租租金在租赁到期重新计算，可能与当前租金有所不同。
+          </Flex>
+        </Panel>
+        <Panel key="10" header="10.续租需要再次冻结押金吗？">
+          <Flex wrap="wrap" className={styles.item_box}>
+            花呗用户：续租时不需要再次冻结预授权，继续用租机时冻结的预授权作为信用担保。<br />
+            信用卡用户：续租时需先用花呗重新冻结预授权，冻结成功后，7个工作日内释放信用卡预授权。
+           </Flex>
+        </Panel>
+      </Accordion>
+    </List>
+  )
+}
+AccordionThree.propTypes = {
+  activeKey: PropTypes.string,
+}
+
+const AccordionFour = ({ activeKey }) => {
+  return (
+    <List renderHeader={'买断'}>
+      <Accordion accordion defaultActiveKey={activeKey}>
+        <Panel key="11" header="11.买断需要付多少钱？">
+          <Flex wrap="wrap" className={styles.item_box}>                        
+            用户在租赁到期可选择支付一定费用买断手机，买断费用以下单时协议里的买断价为准，也可以去订单详情的租赁信息中查看。
+          </Flex>
+        </Panel>
+        <Panel key="12" header="12.买断的金额可以分期付吗，付款方式是什么？">
+          <Flex wrap="wrap" className={styles.item_box}>
+            买断需一次性支付金额。<br />
+            • 若冻结预授权=买断金额，则预授权转消费；<br />
+            • 若冻结预授权&gt;买断金额，则其中等于买断金额的预售前转消费，其余预授权释放给用户；<br />
+            • 若冻结预授权&lt;买断金额，则全部预授权转消费后，剩余金额需一次性支付。
+           </Flex>
+        </Panel>
+      </Accordion>
+    </List>
+  )
+}
+AccordionFour.propTypes = {
+  activeKey: PropTypes.string,
+}
+
+const ListAccordion = ({ activeKey }) => {
+  return (
+    <Fragment>
+      <AccordionOne activeKey={activeKey} />
+      <AccordionTwo activeKey={activeKey} />
+      <AccordionThree activeKey={activeKey} />
+      <AccordionFour activeKey={activeKey} />
+    </Fragment>
+  )
+}
+
+ListAccordion.propTypes = {
+  activeKey: PropTypes.string,
 }
 
 export default ListAccordion
