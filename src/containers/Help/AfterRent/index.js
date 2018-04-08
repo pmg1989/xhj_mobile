@@ -15,7 +15,7 @@ class AfterRent extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 到期了解</Header>
+        <Header>到期了解</Header>
         <div className="content">
           help AfterRent
       </div>

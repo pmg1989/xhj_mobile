@@ -15,7 +15,7 @@ class ComplaintAdvice extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 投诉建议</Header>
+        <Header>投诉建议</Header>
         <div className="content">
           help ComplaintAdvice
       </div>

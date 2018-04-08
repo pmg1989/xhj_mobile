@@ -15,7 +15,7 @@ class HowToUse extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 租机流程</Header>
+        <Header>租机流程</Header>
         <div className="content">
           help howtouse
       </div>

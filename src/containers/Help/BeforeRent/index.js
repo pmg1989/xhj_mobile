@@ -15,7 +15,7 @@ class BeforeRent extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 租前了解</Header>
+        <Header>租前了解</Header>
         <div className="content">
           help BeforeRent
       </div>

@@ -1,0 +1,2 @@
+export const CHANGE_TABBAR = 'CHANGE_TABBAR'
+export const TOGGLE_TABBAR = 'TOGGLE_TABBAR'

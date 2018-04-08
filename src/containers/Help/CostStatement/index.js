@@ -15,7 +15,7 @@ class CostStatement extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机 - 费用说明</Header>
+        <Header>费用说明</Header>
         <div className="content">
           help CostStatement
       </div>

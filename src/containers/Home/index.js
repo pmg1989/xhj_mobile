@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
+import { connect, Header, TabBar } from 'components'
 import { newsActions } from 'actions/news'
 
 class Home extends Component {
@@ -13,12 +13,19 @@ class Home extends Component {
   }
 
   render () {
+    const headerProps = {
+      leftContent: '',
+      icon: null,
+      onLeftClick () {},
+    }
+
     return (
       <div className="content-box">
-        <Header>享换机</Header>
+        <Header {...headerProps}>首页</Header>
         <div className="content">
           home index
-      </div>
+        </div>
+        <TabBar />
       </div>
     )
   }
