@@ -88,7 +88,7 @@ const AccordionThree = ({ activeKey }) => {
     <List renderHeader={'续租'}>
       <Accordion accordion defaultActiveKey={activeKey}>
         <Panel key="9" header="9.续租租金和租机时的租金是一样的吗？">
-          <Flex wrap="wrap" className={styles.item_box}>      
+          <Flex wrap="wrap" className={styles.item_box}>
             用户在租赁到期可以选择继续租用手机，有不同时长可以选择，并且可以多次续租，续租租金在租赁到期重新计算，可能与当前租金有所不同。
           </Flex>
         </Panel>
@@ -111,7 +111,7 @@ const AccordionFour = ({ activeKey }) => {
     <List renderHeader={'买断'}>
       <Accordion accordion defaultActiveKey={activeKey}>
         <Panel key="11" header="11.买断需要付多少钱？">
-          <Flex wrap="wrap" className={styles.item_box}>                        
+          <Flex wrap="wrap" className={styles.item_box}>
             用户在租赁到期可选择支付一定费用买断手机，买断费用以下单时协议里的买断价为准，也可以去订单详情的租赁信息中查看。
           </Flex>
         </Panel>
