@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
-import { connect, Header, TabBar } from 'components'
+import { connect, Container, Header, TabBar } from 'components'
 import { newsActions } from 'actions/news'
 import GridHeader from './GridHeader'
 import ListItem from './ListItem'
@@ -19,15 +19,16 @@ class Help extends Component {
       rightContentType: 'tabBar',
     }
 
+    const containerProps = {
+      renderHeader: <Header {...headerProps}>帮助中心</Header>,
+      renderTabBar: <TabBar />,
+    }
+
     return (
-      <div className="content-box">
-        <Header {...headerProps}>帮助中心</Header>
-        <div className="content">
-          <GridHeader />
-          <ListItem />
-        </div>
-        <TabBar />
-      </div>
+      <Container {...containerProps}>
+        <GridHeader />
+        <ListItem />
+      </Container>
     )
   }
 }

@@ -1,4 +1,5 @@
 import connect from './connect'
+import Container from './Container'
 import Header from './Header'
 import Icon from './Icon'
 import Empty from './Empty'
@@ -8,6 +9,7 @@ import TabBar from './TabBar'
 
 export {
   connect,
+  Container,
   Header,
   Icon,
   Empty,
