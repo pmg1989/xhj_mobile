@@ -13,7 +13,7 @@ const ListItem = () => {
   return (
     <Fragment>
       <List renderHeader={() => '点击以下关键词，快速查找问题'} className={styles.list_box}>
-        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('coststatement')} platform="android">费用说明</Item>
+        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('coststatement')}>费用说明</Item>
         <Item>
           <Flex className={styles.item} justify="start" wrap="wrap">
             <Link className={styles.link} to={'/help/coststatement?question=1'}>租金支付</Link>
@@ -26,7 +26,7 @@ const ListItem = () => {
         </Item>
       </List>
       <List className={styles.list_box}>
-        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('beforerent')} platform="android">租前了解</Item>
+        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('beforerent')}>租前了解</Item>
         <Item>
           <Flex className={styles.item} justify="start" wrap="wrap">
             <Link className={styles.link} to={'/help/beforerent?question=1'}>关于享换机</Link>
@@ -38,7 +38,7 @@ const ListItem = () => {
         </Item>
       </List>
       <List className={styles.list_box}>
-        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('customerservice')} platform="android">售后维修</Item>
+        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('customerservice')}>售后维修</Item>
         <Item>
           <Flex className={styles.item} justify="start" wrap="wrap">
             <Link className={styles.link} to={'/help/customerservice?question=1'}>意外保障服务</Link>
@@ -50,7 +50,7 @@ const ListItem = () => {
         </Item>
       </List>
       <List className={styles.list_box}>
-        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('afterrent')} platform="android">到期了解</Item>
+        <Item extra="更多" arrow="horizontal" onClick={() => handleLinkClick('afterrent')}>到期了解</Item>
         <Item>
           <Flex className={styles.item} justify="start" wrap="wrap">
             <Link className={styles.link} to={'/help/afterrent?question=1'}>怎么还机</Link>
