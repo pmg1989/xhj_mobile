@@ -15,7 +15,7 @@ class Category extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机信用租机</Header>
+        <Header>分类</Header>
         <div className="content">
           product category
         </div>

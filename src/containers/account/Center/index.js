@@ -15,7 +15,7 @@ class Center extends Component {
   render () {
     return (
       <div className="content-box">
-        <Header>享换机信用租机</Header>
+        <Header>用户中心</Header>
         <div className="content">
           account center
         </div>
