@@ -15,9 +15,13 @@ class Help extends Component {
   }
 
   render () {
+    const headerProps = {
+      rightContentType: 'tabBar',
+    }
+
     return (
       <div className="content-box">
-        <Header>帮助中心</Header>
+        <Header {...headerProps}>帮助中心</Header>
         <div className="content">
           <GridHeader />
           <ListItem />

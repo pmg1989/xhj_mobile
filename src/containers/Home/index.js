@@ -13,9 +13,15 @@ class Home extends Component {
   }
 
   render () {
+    const headerProps = {
+      leftContent: '',
+      icon: null,
+      onLeftClick () {},
+    }
+
     return (
       <div className="content-box">
-        <Header>首页</Header>
+        <Header {...headerProps}>首页</Header>
         <div className="content">
           home index
         </div>

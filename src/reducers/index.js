@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux-immutable'
-import routerReducer from './routeReducer'
+import routerReducer from './route-reducers'
 import app from './app'
 import tasks from './tasks'
 import news from './news'

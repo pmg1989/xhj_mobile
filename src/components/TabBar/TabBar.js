@@ -18,16 +18,8 @@ const dicType = {
 
 class MyTabBar extends Component {
   static propTypes = {
-    appBase: PropTypes.instanceOf(Immutable.Map).isRequired,
+    tabBar: PropTypes.instanceOf(Immutable.Map).isRequired,
     onApp: PropTypes.object.isRequired,
-  }
-
-  constructor (props) {
-    super(props)
-    this.state = {
-      selectedTab: 'home',
-      hidden: false,
-    }
   }
 
   handlePress = type => () => {
@@ -36,9 +28,9 @@ class MyTabBar extends Component {
   }
 
   render () {
-    const { appBase } = this.props
-    const selectedTab = appBase.get('selectedTab')
-    const { hidden } = this.state
+    const { tabBar } = this.props
+    const selectedTab = tabBar.get('active')
+    const show = tabBar.get('show')
 
     return (
       <div className={classnames(styles.tabbar_box, styles.fixed)}>
@@ -46,7 +38,7 @@ class MyTabBar extends Component {
           unselectedTintColor="#666"
           tintColor="#c83b33"
           barTintColor="white"
-          hidden={hidden}
+          hidden={!show}
         >
           <TabBar.Item
             icon={<Icon type={require('svg/tab-bar/home.svg')} />}
@@ -79,7 +71,7 @@ class MyTabBar extends Component {
 }
 
 const mapStateToProps = state => ({
-  appBase: state.getIn(['app', 'base']),
+  tabBar: state.getIn(['app', 'tabBar']),
 })
 
 const mapDispatchToProps = dispatch => ({

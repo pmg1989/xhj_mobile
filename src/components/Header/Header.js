@@ -1,17 +1,21 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
-import { goBack } from 'react-router-redux'
-// import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { NavBar } from 'antd-mobile'
 import { Helmet } from 'react-helmet'
 import { Icon } from 'components'
+import { appActions } from 'actions/app'
 import styles from './Header.less'
 
-const Header = ({ dispatch, children, ...headerProps }) => {
+const Header = ({ children, rightContentType, onApp, ...headerProps }) => {
+  const dicRightContentType = {
+    tabBar: <Icon type="ellipsis" onClick={() => onApp.toggleTabBar()} />,
+  }
+
   const handleBack = () => {
-    // browserHistory.goBack()
-    dispatch(goBack())
+    browserHistory.goBack()
   }
 
   const navBarProps = {
@@ -19,6 +23,7 @@ const Header = ({ dispatch, children, ...headerProps }) => {
     icon: < Icon type={require('svg/back.svg')} />,
     mode: 'dark',
     onLeftClick: handleBack,
+    rightContent: dicRightContentType[rightContentType] || headerProps.rightContent,
     ...headerProps,
   }
 
@@ -33,9 +38,13 @@ const Header = ({ dispatch, children, ...headerProps }) => {
 }
 
 Header.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   children: PropTypes.string.isRequired,
-  headerProps: PropTypes.object,
+  rightContentType: PropTypes.string,
+  onApp: PropTypes.object.isRequired,
 }
 
-export default connect()(Header)
+const mapDispatchToProps = dispatch => ({
+  onApp: bindActionCreators(appActions, dispatch),
+})
+
+export default connect(null, mapDispatchToProps)(Header)
