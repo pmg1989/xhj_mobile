@@ -44,6 +44,7 @@ const account = {
 
 const help = {
   path: 'help',
+  component: require('./containers/Help/App'),
   getIndexRoute (location, cb) {
     require.ensure([], (require) => {
       cb(null, { component: require('./containers/Help/Index') })
