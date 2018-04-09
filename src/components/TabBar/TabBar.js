@@ -33,7 +33,7 @@ class MyTabBar extends Component {
     const show = tabBar.get('show')
 
     return (
-      <div className={classnames(styles.tabbar_box, styles.fixed)}>
+      <div className={classnames(styles.tabbar_box, show && styles.fixed)}>
         <TabBar
           unselectedTintColor="#666"
           tintColor="#c83b33"
