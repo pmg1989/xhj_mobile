@@ -6,7 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router'
 import { useScroll } from 'react-router-scroll'
 import 'utils/rem'
-import 'utils/moment-locale'
+// import 'utils/moment-locale'
 import './themes/index.less'
 
 import routers from './routes'
