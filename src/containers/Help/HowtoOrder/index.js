@@ -1,31 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
-import { newsActions } from 'actions/news'
+import React from 'react'
+// import PropTypes from 'prop-types'
+import { connect, Container, Header } from 'components'
+import Content from './Content'
 
-class HowtoOrder extends Component {
-  static propTypes = {
-    onNewsActions: PropTypes.object.isRequired,
+const HowtoOrder = () => {
+  const headerProps = {
+    rightContentType: 'tabBar',
   }
 
-  componentDidMount () {
+  const containerProps = {
+    renderHeader: <Header {...headerProps}>下单流程</Header>,
   }
 
-  render () {
-    return (
-      <div className="content-box">
-        <Header>下单流程</Header>
-        <div className="content">
-          help HowtoOrder
-      </div>
-      </div>
-    )
-  }
+  return (
+    <Container {...containerProps}>
+      <Content />
+    </Container>
+  )
 }
 
-const mapDispatchToProps = dispatch => ({
-  onNewsActions: bindActionCreators(newsActions, dispatch),
-})
-
-export default connect(null, mapDispatchToProps)(module)(HowtoOrder)
+export default connect()(module)(HowtoOrder)
