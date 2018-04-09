@@ -1,31 +1,49 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
-import { newsActions } from 'actions/news'
+import { connect, Container, Header, TabBar } from 'components'
+import { scrollToAnchor } from 'utils/tools'
+import AccordionOne from './AccordionOne'
+import AccordionTwo from './AccordionTwo'
+import AccordionThree from './AccordionThree'
+import Footer from '../Footer'
 
 class AfterRent extends Component {
   static propTypes = {
-    onNewsActions: PropTypes.object.isRequired,
+    query: PropTypes.object.isRequired,
   }
 
   componentDidMount () {
+    setTimeout(() => {
+      const question = this.props.query.question
+      question && scrollToAnchor(this.props.query.question)
+    }, 0)
   }
 
   render () {
+    const { question } = this.props.query
+
+    const headerProps = {
+      rightContentType: 'tabBar',
+    }
+
+    const containerProps = {
+      renderHeader: <Header {...headerProps}>到期了解</Header>,
+      renderTabBar: <TabBar />,
+    }
+
     return (
-      <div className="content-box">
-        <Header>到期了解</Header>
-        <div className="content">
-          help AfterRent
-      </div>
-      </div>
+      <Container {...containerProps}>
+        <AccordionOne activeKey={question} />
+        <AccordionTwo activeKey={question} />
+        <AccordionThree activeKey={question} />
+        <Footer />
+      </Container>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  onNewsActions: bindActionCreators(newsActions, dispatch),
+const mapStateToProps = (state, ownProps) => ({
+  query: ownProps.location.query,
 })
 
-export default connect(null, mapDispatchToProps)(module)(AfterRent)
+export default connect(mapStateToProps)(module)(AfterRent)
