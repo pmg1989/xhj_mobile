@@ -23,7 +23,6 @@ const GridHeader = () => {
     <Grid
       className={styles.thumb_box}
       data={data}
-      square={false}
       hasLine={false}
       renderItem={(item, index) => (
         <Link className={styles.item_content} to={links[index]}>

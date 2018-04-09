@@ -18,7 +18,6 @@ const GridHeader = () => {
       itemStyle={{ backgroundColor: '#f8f8f8' }}
       activeStyle={false}
       data={data}
-      square
       hasLine={false}
       renderItem={(item, index) => (
         <div className={classnames(styles.item_content, index === data.length - 1 && styles.last)}>
