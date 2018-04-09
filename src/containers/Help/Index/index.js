@@ -18,7 +18,7 @@ class Help extends Component {
 
     const containerProps = {
       renderHeader: <Header {...headerProps}>帮助中心</Header>,
-      renderTabBar: <TabBar hidden />,
+      renderTabBar: <TabBar hidden selectedTab="" />,
     }
 
     return (

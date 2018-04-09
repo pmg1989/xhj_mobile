@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
-import { connect, Header, TabBar } from 'components'
+import { connect, Container, Header, TabBar } from 'components'
 import { newsActions } from 'actions/news'
 
 class Category extends Component {
@@ -13,14 +13,15 @@ class Category extends Component {
   }
 
   render () {
+    const containerProps = {
+      renderHeader: <Header>产品分类</Header>,
+      renderTabBar: <TabBar selectedTab="product" />,
+    }
+
     return (
-      <div className="content-box">
-        <Header>分类</Header>
-        <div className="content">
-          product category
-        </div>
-        <TabBar />
-      </div>
+      <Container {...containerProps}>
+        product category
+      </Container>
     )
   }
 }

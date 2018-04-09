@@ -19,17 +19,19 @@ const dicType = {
 class MyTabBar extends Component {
   static propTypes = {
     tabBar: PropTypes.instanceOf(Immutable.Map).isRequired,
+    selectedTab: PropTypes.string,
     hidden: PropTypes.bool,
     onApp: PropTypes.object.isRequired,
   }
 
   static defaultProps = {
     hidden: false,
+    selectedTab: '',
   }
 
   componentWillMount () {
-    const { hidden, onApp } = this.props
-    onApp.toggleTabBar(!hidden)
+    const { hidden, selectedTab, onApp } = this.props
+    onApp.initTabBar(selectedTab, !hidden)
   }
 
   handlePress = type => () => {

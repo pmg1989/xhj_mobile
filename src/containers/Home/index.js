@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router'
-import { connect, Header, TabBar } from 'components'
+import { connect, Container, Header, TabBar } from 'components'
 import { newsActions } from 'actions/news'
 
 class Home extends Component {
@@ -20,15 +20,16 @@ class Home extends Component {
       onLeftClick () {},
     }
 
+    const containerProps = {
+      renderHeader: <Header {...headerProps}>首页</Header>,
+      renderTabBar: <TabBar selectedTab="home" />,
+    }
+
     return (
-      <div className="content-box">
-        <Header {...headerProps}>首页</Header>
-        <div className="content">
-          home index
-          <Link to={'/help'} style={{ color: '#00a699' }}>go to help</Link>
-        </div>
-        <TabBar />
-      </div>
+      <Container {...containerProps}>
+        home index
+        <Link to={'/help'} style={{ color: '#00a699' }}>go to help</Link>
+      </Container>
     )
   }
 }
