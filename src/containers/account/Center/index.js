@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
-import { connect, Container, Header, TabBar } from 'components'
+import { connect, Container, Header } from 'components'
 import { newsActions } from 'actions/news'
 
 class Center extends Component {
@@ -15,7 +15,6 @@ class Center extends Component {
   render () {
     const containerProps = {
       renderHeader: <Header>用户中心</Header>,
-      renderTabBar: <TabBar selectedTab="myCenter" />,
     }
 
     return (

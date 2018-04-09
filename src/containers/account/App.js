@@ -2,17 +2,17 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { TabBar } from 'components'
 
-const HelpApp = ({ children }) => {
+const AccountApp = ({ children }) => {
   return (
     <Fragment>
       {children}
-      <TabBar hidden selectedTab="" />
+      <TabBar selectedTab="myCenter" />
     </Fragment>
   )
 }
 
-HelpApp.propTypes = {
+AccountApp.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default HelpApp
+export default AccountApp

@@ -1,5 +1,6 @@
 const product = {
   path: 'product',
+  component: require('./containers/Product/App'),
   childRoutes: [
     {
       path: 'category',
@@ -22,6 +23,7 @@ const product = {
 
 const account = {
   path: 'account',
+  component: require('./containers/account/App'),
   childRoutes: [
     {
       path: 'center',
