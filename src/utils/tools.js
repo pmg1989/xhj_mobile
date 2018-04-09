@@ -27,3 +27,12 @@ export function parseTime (time) {
   return `${min}:${sec}`
   // return `${min.padStart(2, '0')}:${sec.padStart(2, '0')}`
 }
+
+export function scrollToAnchor (anchorName) {
+  if (anchorName) {
+    const anchorElement = document.querySelector(`#question${anchorName}`)
+    if (anchorElement) {
+      anchorElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+}
