@@ -35,7 +35,7 @@ class MyTabBar extends Component {
   }
 
   handlePress = type => () => {
-    this.props.onApp.changeTabBar(type)
+    // this.props.onApp.changeTabBar(type)
     browserHistory.push(dicType[type])
   }
 
