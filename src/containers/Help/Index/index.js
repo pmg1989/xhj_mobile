@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
-import { connect, Container, Header, TabBar } from 'components'
+import { connect, Container, Header } from 'components'
 import GridHeader from './GridHeader'
 import ListItem from './ListItem'
 
@@ -18,7 +18,6 @@ class Help extends Component {
 
     const containerProps = {
       renderHeader: <Header {...headerProps}>帮助中心</Header>,
-      renderTabBar: <TabBar />,
     }
 
     return (

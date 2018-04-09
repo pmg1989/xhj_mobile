@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
+import { connect, Container, Header } from 'components'
 import { newsActions } from 'actions/news'
 
 class Center extends Component {
@@ -13,13 +13,14 @@ class Center extends Component {
   }
 
   render () {
+    const containerProps = {
+      renderHeader: <Header>用户中心</Header>,
+    }
+
     return (
-      <div className="content-box">
-        <Header>享换机信用租机</Header>
-        <div className="content">
-          account orderlist
-        </div>
-      </div>
+      <Container {...containerProps}>
+        account orderlist
+      </Container>
     )
   }
 }
