@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <List className={styles.footer_box}>
       <Item>
-        <span className={styles.text}>没有找到相关答案？可以联系<a className={styles.link} href="">在线客服</a></span>
+        <span className={styles.text}>没有找到相关答案？可以联系<a className={styles.link} href="/help">在线客服</a></span>
       </Item>
     </List>
   )
