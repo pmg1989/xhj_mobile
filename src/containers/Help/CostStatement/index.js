@@ -29,7 +29,7 @@ class CostStatement extends Component {
 
     const containerProps = {
       renderHeader: <Header {...headerProps}>费用说明</Header>,
-      renderTabBar: <TabBar />,
+      renderTabBar: <TabBar hidden />,
     }
 
     return (
