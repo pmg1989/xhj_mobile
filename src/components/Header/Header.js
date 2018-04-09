@@ -11,11 +11,12 @@ import { appActions } from 'actions/app'
 import styles from './Header.less'
 
 const Header = ({ children, showTabBar, rightContentType, onApp, ...headerProps }) => {
-  // const dicRightContentType = {
-  //   tabBar: <Icon type="ellipsis" onClick={() => onApp.toggleTabBar()} />,
-  // }
   const dicRightContentType = {
-    tabBar: <span className={classnames(styles.btn_nav, showTabBar && styles.active)} onClick={() => onApp.toggleTabBar()}><i /><i /><i /></span>,
+    tabBar: (
+      <span className={classnames(styles.btn_nav, showTabBar && styles.active)} onClick={() => onApp.toggleTabBar()}>
+        <i /><i /><i />
+      </span>
+    ),
   }
 
   const handleBack = () => {
