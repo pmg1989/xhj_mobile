@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, Container, Header, TabBar } from 'components'
+import { connect, Container, Header } from 'components'
 import { scrollToAnchor } from 'utils/tools'
 import AccordionOne from './AccordionOne'
 import AccordionTwo from './AccordionTwo'
@@ -27,7 +27,6 @@ class CustomerService extends Component {
 
     const containerProps = {
       renderHeader: <Header {...headerProps}>售后维修</Header>,
-      renderTabBar: <TabBar />,
     }
 
     return (
