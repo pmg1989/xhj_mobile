@@ -6,6 +6,7 @@ import AccordionOne from './AccordionOne'
 import AccordionTwo from './AccordionTwo'
 import AccordionThree from './AccordionThree'
 import AccordionFour from './AccordionFour'
+import Footer from '../Footer'
 
 class CostStatement extends Component {
   static propTypes = {
@@ -21,8 +22,13 @@ class CostStatement extends Component {
 
   render () {
     const { question } = this.props.query
+
+    const headerProps = {
+      rightContentType: 'tabBar',
+    }
+
     const containerProps = {
-      renderHeader: <Header>费用说明</Header>,
+      renderHeader: <Header {...headerProps}>费用说明</Header>,
       renderTabBar: <TabBar />,
     }
 
@@ -32,6 +38,7 @@ class CostStatement extends Component {
         <AccordionTwo activeKey={question} />
         <AccordionThree activeKey={question} />
         <AccordionFour activeKey={question} />
+        <Footer />
       </Container>
     )
   }

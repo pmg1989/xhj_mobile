@@ -5,7 +5,7 @@ import { appConstants } from 'constants'
 const $app = Immutable.fromJS({
   tabBar: {
     active: 'home',
-    show: true,
+    show: false,
   },
 })
 
