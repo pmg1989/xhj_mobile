@@ -17,7 +17,7 @@ class BeforeRent extends Component {
       <div className="content-box">
         <Header>租前了解</Header>
         <div className="content">
-          help BeforeRent
+          help BeforeRent test
       </div>
       </div>
     )
