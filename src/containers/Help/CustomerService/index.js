@@ -1,31 +1,57 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
-import { newsActions } from 'actions/news'
+import { connect, Container, Header } from 'components'
+import { scrollToAnchor } from 'utils/tools'
+import AccordionList from '../AccordionList'
+import AccordionOne from './AccordionOne'
+import AccordionTwo from './AccordionTwo'
+import Footer from '../Footer'
 
 class CustomerService extends Component {
   static propTypes = {
-    onNewsActions: PropTypes.object.isRequired,
+    query: PropTypes.object.isRequired,
+  }
+
+  state = {
+    activeKey: this.props.query.question,
   }
 
   componentDidMount () {
+    setTimeout(() => {
+      const question = this.props.query.question
+      question && scrollToAnchor(this.props.query.question)
+    }, 0)
   }
 
   render () {
+    const { activeKey } = this.state
+
+    const headerProps = {
+      rightContentType: 'tabBar',
+    }
+
+    const containerProps = {
+      renderHeader: <Header {...headerProps}>售后维修</Header>,
+    }
+
+    const handleAccordionChange = (key) => {
+      this.setState({ activeKey: key })
+    }
+
     return (
-      <div className="content-box">
-        <Header>售后维修</Header>
-        <div className="content">
-          help CustomerService
-      </div>
-      </div>
+      <Container {...containerProps}>
+        <AccordionList activeKey={activeKey} onAccordionChange={handleAccordionChange}>
+          <AccordionOne />
+          <AccordionTwo />
+        </AccordionList>
+        <Footer />
+      </Container>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  onNewsActions: bindActionCreators(newsActions, dispatch),
+const mapStateToProps = (state, ownProps) => ({
+  query: ownProps.location.query,
 })
 
-export default connect(null, mapDispatchToProps)(module)(CustomerService)
+export default connect(mapStateToProps)(module)(CustomerService)

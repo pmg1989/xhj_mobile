@@ -1,6 +1,11 @@
 const product = {
   path: 'product',
   component: require('./containers/Product/App'),
+  getIndexRoute (location, cb) {
+    require.ensure([], (require) => {
+      cb(null, { component: require('./containers/Product/Category') })
+    }, 'product-category')
+  },
   childRoutes: [
     {
       path: 'category',
@@ -24,6 +29,11 @@ const product = {
 const account = {
   path: 'account',
   component: require('./containers/account/App'),
+  getIndexRoute (location, cb) {
+    require.ensure([], (require) => {
+      cb(null, { component: require('./containers/account/Center') })
+    }, 'account-center')
+  },
   childRoutes: [
     {
       path: 'center',

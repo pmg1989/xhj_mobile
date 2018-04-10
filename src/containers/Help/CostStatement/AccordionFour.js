@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { List, Accordion, Flex } from 'antd-mobile'
-import styles from '../ListAccordion.less'
+import styles from '../AccordionList.less'
 
 const Panel = Accordion.Panel
 
-const AccordionFour = ({ activeKey }) => {
+const AccordionFour = ({ activeKey, onAccordionChange }) => {
   return (
     <List renderHeader={'买断'}>
-      <Accordion accordion defaultActiveKey={activeKey}>
+      <Accordion accordion activeKey={activeKey} onChange={onAccordionChange}>
         <Panel key="11" header="11.买断需要付多少钱？" id="question11">
           <Flex wrap="wrap" className={styles.item_box}>
             用户在租赁到期可选择支付一定费用买断手机，买断费用以下单时协议里的买断价为准，也可以去订单详情的租赁信息中查看。
@@ -29,6 +29,7 @@ const AccordionFour = ({ activeKey }) => {
 
 AccordionFour.propTypes = {
   activeKey: PropTypes.string,
+  onAccordionChange: PropTypes.func,
 }
 
 export default AccordionFour

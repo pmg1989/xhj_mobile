@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { List, Accordion, Flex } from 'antd-mobile'
-import styles from '../ListAccordion.less'
+import styles from '../AccordionList.less'
 
 const Panel = Accordion.Panel
 
-const AccordionTwo = ({ activeKey }) => {
+const AccordionTwo = ({ activeKey, onAccordionChange }) => {
   return (
     <List renderHeader={'还款'}>
-      <Accordion accordion defaultActiveKey={activeKey}>
+      <Accordion accordion activeKey={activeKey} onChange={onAccordionChange}>
         <Panel key="6" header="6.扣款周期是多久？" id="question6">
           <Flex wrap="wrap" className={styles.item_box}>
             支付方式不同，扣款周期也不同。<br />
@@ -36,6 +36,7 @@ const AccordionTwo = ({ activeKey }) => {
 
 AccordionTwo.propTypes = {
   activeKey: PropTypes.string,
+  onAccordionChange: PropTypes.func,
 }
 
 export default AccordionTwo

@@ -1,31 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
-import { newsActions } from 'actions/news'
+import React from 'react'
+// import PropTypes from 'prop-types'
+import { connect, Container, Header } from 'components'
+import Content from './Content'
 
-class HowtoMaintain extends Component {
-  static propTypes = {
-    onNewsActions: PropTypes.object.isRequired,
+const HowtoMaintain = () => {
+  const headerProps = {
+    rightContentType: 'tabBar',
   }
 
-  componentDidMount () {
+  const containerProps = {
+    renderHeader: <Header {...headerProps}>维修流程</Header>,
   }
 
-  render () {
-    return (
-      <div className="content-box">
-        <Header>维修流程</Header>
-        <div className="content">
-          help HowtoMaintain
-      </div>
-      </div>
-    )
-  }
+  return (
+    <Container {...containerProps}>
+      <Content />
+    </Container>
+  )
 }
 
-const mapDispatchToProps = dispatch => ({
-  onNewsActions: bindActionCreators(newsActions, dispatch),
-})
-
-export default connect(null, mapDispatchToProps)(module)(HowtoMaintain)
+export default connect()(module)(HowtoMaintain)

@@ -28,7 +28,7 @@ class Home extends Component {
     return (
       <Container {...containerProps}>
         home index
-        <Link to={'/help'} style={{ color: '#00a699' }}>go to help</Link>
+        <Link to={'/help'} style={{ color: '#00a699' }}>帮助中心</Link>
       </Container>
     )
   }
