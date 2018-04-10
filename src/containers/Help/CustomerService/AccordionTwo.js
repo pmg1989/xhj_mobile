@@ -29,7 +29,7 @@ const AccordionOne = ({ activeKey, onAccordionChange }) => {
             退货的运费是由您自行承担的哦。
           </Flex>
         </Panel>
-        <Panel key="9" header="9.在合约期内机器不想用了可以退货换其他型号的机器吗？" id="question9">
+        <Panel className={styles.panel_extra} key="9" header="9.在合约期内机器不想用了可以退货换其他型号的机器吗？" id="question9">
           <Flex wrap="wrap" className={styles.item_box}>
             非常抱歉，合约期内暂时不支持改换其他型号的机器。
           </Flex>
