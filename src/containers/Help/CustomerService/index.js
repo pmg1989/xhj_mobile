@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect, Container, Header } from 'components'
 import { scrollToAnchor } from 'utils/tools'
+import AccordionList from '../AccordionList'
 import AccordionOne from './AccordionOne'
 import AccordionTwo from './AccordionTwo'
 import Footer from '../Footer'
@@ -9,6 +10,10 @@ import Footer from '../Footer'
 class CustomerService extends Component {
   static propTypes = {
     query: PropTypes.object.isRequired,
+  }
+
+  state = {
+    activeKey: this.props.query.question,
   }
 
   componentDidMount () {
@@ -19,7 +24,7 @@ class CustomerService extends Component {
   }
 
   render () {
-    const { question } = this.props.query
+    const { activeKey } = this.state
 
     const headerProps = {
       rightContentType: 'tabBar',
@@ -29,10 +34,16 @@ class CustomerService extends Component {
       renderHeader: <Header {...headerProps}>售后维修</Header>,
     }
 
+    const handleAccordionChange = (key) => {
+      this.setState({ activeKey: key })
+    }
+
     return (
       <Container {...containerProps}>
-        <AccordionOne activeKey={question} />
-        <AccordionTwo activeKey={question} />
+        <AccordionList activeKey={activeKey} onAccordionChange={handleAccordionChange}>
+          <AccordionOne />
+          <AccordionTwo />
+        </AccordionList>
         <Footer />
       </Container>
     )

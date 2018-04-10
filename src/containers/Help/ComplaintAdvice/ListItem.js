@@ -1,5 +1,6 @@
 import React from 'react'
 import { List } from 'antd-mobile'
+import { Icon } from 'components'
 import styles from './ListItem.less'
 
 const Item = List.Item
@@ -14,7 +15,7 @@ const ListItem = () => {
             欢迎您发送邮件至
           </div>
           <a className={styles.btn_blue} href="mailto:110@xianghuanji.com">
-            <img alt="mail" src={require('images/help/xhj-mail.jpg')} />
+            <Icon type={require('svg/help/email.svg')} /> 110@xianghuanji.com
           </a>
         </div>
       </Item>
@@ -24,7 +25,7 @@ const ListItem = () => {
             您还可以拨打我们的客服电话
           </div>
           <a className={styles.btn_blue} href="tel:400-670-0188">
-            <img alt="mail" src={require('images/help/xhj-tel.jpg')} />
+            <Icon type={require('svg/help/tel.svg')} /> 400-670-0188(转4)
           </a>
         </div>
       </Item>

@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { List, Accordion, Flex } from 'antd-mobile'
-import styles from '../ListAccordion.less'
+import styles from '../AccordionList.less'
 
 const Panel = Accordion.Panel
 
-const AccordionOne = ({ activeKey }) => {
+const AccordionOne = ({ activeKey, onAccordionChange }) => {
   return (
     <List renderHeader={'租机'}>
-      <Accordion accordion defaultActiveKey={activeKey}>
+      <Accordion accordion activeKey={activeKey} onChange={onAccordionChange}>
         <Panel key="1" header="1.租机时需要支付哪些费用？" id="question1">
           <Flex wrap="wrap" className={styles.item_box}>
             租机费用包括：<br />
@@ -49,6 +49,7 @@ const AccordionOne = ({ activeKey }) => {
 }
 AccordionOne.propTypes = {
   activeKey: PropTypes.string,
+  onAccordionChange: PropTypes.func,
 }
 
 export default AccordionOne

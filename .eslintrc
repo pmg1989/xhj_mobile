@@ -58,6 +58,8 @@
     "localStorage": true,
     "sessionStorage": true,
     "document": true,
-    "zhuge": true
+    "zhuge": true,
+    "NTKF_PARAM": true,
+    "NTKF": true
   }
 }

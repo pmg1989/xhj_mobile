@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { List, Accordion, Flex } from 'antd-mobile'
-import styles from '../ListAccordion.less'
+import styles from '../AccordionList.less'
 
 const Panel = Accordion.Panel
 
-const AccordionOne = ({ activeKey }) => {
+const AccordionOne = ({ activeKey, onAccordionChange }) => {
   return (
     <List renderHeader={'租机规则'}>
-      <Accordion accordion defaultActiveKey={activeKey}>
+      <Accordion accordion activeKey={activeKey} onChange={onAccordionChange}>
         <Panel key="1" header="1.什么是享换机？" id="question1">
           <Flex wrap="wrap" className={styles.item_box}>
             享换机，国内领先的信用租机服务提供商，为用户提供“只为使用付费，不为残值买单”的电子产品消费新模式。用户仅需按月支付租金便可轻松获取手机的使用权，同时在租赁到期后享换机为用户提供还机换新、续租、买断的灵活处理方式，为用户提供便捷的年年换新的用机服务。
@@ -37,6 +37,7 @@ const AccordionOne = ({ activeKey }) => {
 }
 AccordionOne.propTypes = {
   activeKey: PropTypes.string,
+  onAccordionChange: PropTypes.func,
 }
 
 export default AccordionOne

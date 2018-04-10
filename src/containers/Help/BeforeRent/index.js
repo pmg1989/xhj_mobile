@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect, Container, Header } from 'components'
 import { scrollToAnchor } from 'utils/tools'
+import AccordionList from '../AccordionList'
 import AccordionOne from './AccordionOne'
 import AccordionTwo from './AccordionTwo'
 import AccordionThree from './AccordionThree'
@@ -12,6 +13,10 @@ class BeforeRent extends Component {
     query: PropTypes.object.isRequired,
   }
 
+  state = {
+    activeKey: this.props.query.question,
+  }
+
   componentDidMount () {
     setTimeout(() => {
       const question = this.props.query.question
@@ -20,7 +25,7 @@ class BeforeRent extends Component {
   }
 
   render () {
-    const { question } = this.props.query
+    const { activeKey } = this.state
 
     const headerProps = {
       rightContentType: 'tabBar',
@@ -30,11 +35,17 @@ class BeforeRent extends Component {
       renderHeader: <Header {...headerProps}>租前了解</Header>,
     }
 
+    const handleAccordionChange = (key) => {
+      this.setState({ activeKey: key })
+    }
+
     return (
       <Container {...containerProps}>
-        <AccordionOne activeKey={question} />
-        <AccordionTwo activeKey={question} />
-        <AccordionThree activeKey={question} />
+        <AccordionList activeKey={activeKey} onAccordionChange={handleAccordionChange}>
+          <AccordionOne />
+          <AccordionTwo />
+          <AccordionThree />
+        </AccordionList>
         <Footer />
       </Container>
     )
