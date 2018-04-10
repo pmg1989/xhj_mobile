@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { List, Accordion, Flex } from 'antd-mobile'
-import styles from '../ListAccordion.less'
+import styles from '../AccordionList.less'
 
 const Panel = Accordion.Panel
 
-const AccordionOne = ({ activeKey }) => {
+const AccordionOne = ({ activeKey, onAccordionChange }) => {
   return (
     <List renderHeader={'机器'}>
-      <Accordion accordion defaultActiveKey={activeKey}>
+      <Accordion accordion activeKey={activeKey} onChange={onAccordionChange}>
         <Panel key="5" header="5.享换机提供的机器是全新的吗？" id="question5">
           <Flex wrap="wrap" className={styles.item_box}>
           我们有全新机和二手机器，满足不同人群对机器的需求。机器均是官方正品，二手机有轻微使用痕迹，屏幕显示正常，无功能异常。
@@ -35,6 +35,7 @@ const AccordionOne = ({ activeKey }) => {
 }
 AccordionOne.propTypes = {
   activeKey: PropTypes.string,
+  onAccordionChange: PropTypes.func,
 }
 
 export default AccordionOne

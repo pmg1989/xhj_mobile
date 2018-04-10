@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { List, Accordion, Flex } from 'antd-mobile'
-import styles from '../ListAccordion.less'
+import styles from '../AccordionList.less'
 
 const Panel = Accordion.Panel
 
-const AccordionOne = ({ activeKey }) => {
+const AccordionOne = ({ activeKey, onAccordionChange }) => {
   return (
     <List renderHeader={'维修'}>
-      <Accordion accordion defaultActiveKey={activeKey}>
+      <Accordion accordion activeKey={activeKey} onChange={onAccordionChange}>
         <Panel key="1" header="1.什么是意外保障服务？" id="question1">
           <Flex wrap="wrap" className={styles.item_box}>
             用户在收到机器的15天后，如果手机发现碎屏、进水、漏液、无法关机等人为不小心造成的问题时，可申请维修，若经质检工程师判断符合意外保障服务范围，可免费维修，维修费用累计不超过机器保额上限。如果不符合意外保险的，享换机提供非人为的功能性问题维修。
@@ -35,6 +35,7 @@ const AccordionOne = ({ activeKey }) => {
 }
 AccordionOne.propTypes = {
   activeKey: PropTypes.string,
+  onAccordionChange: PropTypes.func,
 }
 
 export default AccordionOne
