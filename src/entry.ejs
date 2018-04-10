@@ -39,6 +39,16 @@
     })('<%= htmlWebpackPlugin.options.serviceWorker %>');
   </script>
   <script type="text/javascript">
+      // help 帮助中心ntkfstat.js需要的传递参数
+      NTKF_PARAM = {
+        siteid: 'kf_9593',  // 企业ID，必填，取值参见文档开始表
+        settingid: 'kf_9593_1495434528643',     // 缺省客服配置ID，必填，取值参见文档开始表
+        uid: '',    // 用户ID,未登录可以为空
+        uname: '',  // 用户名，未登录可以为空
+        isvip: '0',          // 是否为vip用户
+        userlevel: '未登录用户',      // 网站自定义会员级别
+      }
+      
       function getCookie(name) {
           var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)"); //正则匹配
           if (arr = document.cookie.match(reg)) {
