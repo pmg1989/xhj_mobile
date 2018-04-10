@@ -6,10 +6,10 @@ import styles from './GridHeader.less'
 
 const GridHeader = () => {
   const data = [
-    { icon: require('svg/tab-bar/product.svg'), text: '租机流程' },
-    { icon: require('svg/tab-bar/product-active.svg'), text: '下单流程' },
-    { icon: require('svg/tab-bar/product.svg'), text: '维修流程' },
-    { icon: require('svg/tab-bar/product-active.svg'), text: '投诉建议' },
+    { icon: require('svg/help/howtouse.svg'), text: '租机流程' },
+    { icon: require('svg/help/howtoorder.svg'), text: '下单流程' },
+    { icon: require('svg/help/howtomaintain.svg'), text: '维修流程' },
+    { icon: require('svg/help/complaintadvice.svg'), text: '投诉建议' },
   ]
 
   const links = [
