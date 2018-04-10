@@ -1,31 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
-import { newsActions } from 'actions/news'
+import React from 'react'
+// import PropTypes from 'prop-types'
+import { connect, Container, Header } from 'components'
+import ListItem from './ListItem'
 
-class ComplaintAdvice extends Component {
-  static propTypes = {
-    onNewsActions: PropTypes.object.isRequired,
+const ComplaintAdvice = () => {
+  const headerProps = {
+    rightContentType: 'tabBar',
   }
 
-  componentDidMount () {
+  const containerProps = {
+    renderHeader: <Header {...headerProps}>投诉建议</Header>,
   }
 
-  render () {
-    return (
-      <div className="content-box">
-        <Header>投诉建议</Header>
-        <div className="content">
-          help ComplaintAdvice
-      </div>
-      </div>
-    )
-  }
+  return (
+    <Container {...containerProps}>
+      <ListItem />
+    </Container>
+  )
 }
 
-const mapDispatchToProps = dispatch => ({
-  onNewsActions: bindActionCreators(newsActions, dispatch),
-})
-
-export default connect(null, mapDispatchToProps)(module)(ComplaintAdvice)
+export default connect()(module)(ComplaintAdvice)

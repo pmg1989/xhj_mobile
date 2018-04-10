@@ -1,31 +1,25 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import { connect, Header } from 'components'
-import { newsActions } from 'actions/news'
+import React from 'react'
+// import PropTypes from 'prop-types'
+import { connect, Container, Header } from 'components'
+import GridHeader from './GridHeader'
+import ListItem from './ListItem'
 
-class HowToUse extends Component {
-  static propTypes = {
-    onNewsActions: PropTypes.object.isRequired,
+const HowToUse = () => {
+  const headerProps = {
+    rightContentType: 'tabBar',
   }
 
-  componentDidMount () {
+  const containerProps = {
+    renderHeader: <Header {...headerProps}>租机流程</Header>,
   }
 
-  render () {
-    return (
-      <div className="content-box">
-        <Header>租机流程</Header>
-        <div className="content">
-          help howtouse
-      </div>
-      </div>
-    )
-  }
+  return (
+    <Container {...containerProps}>
+      <GridHeader />
+      <ListItem />
+    </Container>
+  )
 }
 
-const mapDispatchToProps = dispatch => ({
-  onNewsActions: bindActionCreators(newsActions, dispatch),
-})
+export default connect()(module)(HowToUse)
 
-export default connect(null, mapDispatchToProps)(module)(HowToUse)
